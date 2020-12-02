@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("https://images8.alphacoders.com/633/thumb-1920-633270.png");
+    color: chartreuse;
+}
+#character_card{
+    border: 1;
+    border-color:honeydew;
+    display: flex;
+}
+header{
+    height: 100vh;
+    width: 80vh;
+    font-family: 'Rammetto One', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
