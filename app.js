@@ -1,13 +1,12 @@
-var itr = 0 ;
-while(itr<21){
-fetch(`https://rickandmortyapi.com/api/character/?page=${itr}`)
+var itr = 1 ;
+while(itr<51){
+fetch(`https://rickandmortyapi.com/api/character/${itr}`)
   .then((response) => response.json())
-  .then((data) => makeCards(data.results));
+  .then((data) => makeCards(data));
 
-function makeCards(charactersArray) {
+function makeCards(character) {
   const cardContainer = document.querySelector("#card-container");
-  console.log(charactersArray);
-  charactersArray.forEach((character) => {
+  console.log(character);
     cardContainer.innerHTML =
       cardContainer.innerHTML +
       `<div id="character_card-${character.id}">
@@ -17,7 +16,6 @@ function makeCards(charactersArray) {
     <p>Species: ${character.species}</p>
 
     </div>`;
-  });
 }
 itr++;
 }
