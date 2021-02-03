@@ -1,5 +1,5 @@
 var itr = 1 ;
-while(itr<51){
+while(itr<53){
 fetch(`https://rickandmortyapi.com/api/character/${itr}`)
   .then((response) => response.json())
   .then((data) => makeCards(data));
@@ -9,13 +9,15 @@ function makeCards(character) {
   console.log(character);
     cardContainer.innerHTML =
       cardContainer.innerHTML +
-      `<div id="character_card-${character.id}">
-    <h2>${character.name}</h2>
-    <img src=${character.image}></img>
-    <p>Status: ${character.status}</p>
-    <p>Species: ${character.species}</p>
-
-    </div>`;
+      `<div class="character-container">
+        <div id="character_card-${character.id}">
+          <img class="img-card"src=${character.image}></img>
+          <h2 class="card-title">${character.name}</h2>
+          <p>Status: ${character.status}</p>
+          <p>Species: ${character.species}</p>
+          
+        </div>
+      </div>`;
 }
 itr++;
 }
